@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./logo.png" rel="shortcut icon">
+    <title>HCAT</title>
+    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/gsap/3.9.1/gsap.min.js" type="application/javascript"></script>
+    <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/gsap/3.9.1/ScrollTrigger.min.js" type="application/javascript"></script>
+    <link href="https://cdn.staticfile.org/mdui/1.0.2/css/mdui.min.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="./main.min.css" />
+</head>
+<body
+style="background: rgb(173, 173, 173);"
+>
+    <header class="appbar mdui-appbar mdui-appbar-fixed">
+        <div class="mdui-toolbar mdui-color-blue-200">
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon">
+            <i class="mdui-icon material-icons">menu</i>
+            </a>
+            <span class="mdui-typo-title">首页</span>
+            <div class="mdui-toolbar-spacer"></div>
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon">
+            <i class="mdui-icon material-icons">more_vert</i>
+            </a>
+        </div>
+    </header>
+
+    <div class="page-warp">
+        <div class="mdui-container">
+            <div class="banner">
+                <img src="./logo.png" class="title-img">
+                <div class="mdui-row font-set-phone">
+                    <div class="box-text-h mdui-col-xs-2">
+                        <h1 class="font-set"
+                        style="color:#3F51B5;"
+                        >H</h1>
+                    </div>
+                    <div class="box-text-cat mdui-col-xs-1">
+                        <h1 class="font-set"
+                        style="color: #fff;"
+                        >CAT</h1>
+                    </div>
+                </div>
+                <h1
+                class="box-text-info"
+                >致力于成为真正小而美的在线网页聊天程序</h1>
+                <div class="mdui-row box-button-nne">
+                    <div class="mdui-col-xs-6">
+                        <button class="mdui-btn mdui-btn-block mdui-btn-icon box-button mdui-color-blue-200 mdui-ripple"
+                        style="border-radius: 30px;"
+						onclick="mdui.alert('很快就开放测试咯，再等等~~', '即将到来');"
+                        >
+                            申请测试
+                        </button>
+                    </div>
+                    <div class="mdui-col-xs-6" >
+                        <button class="mdui-btn mdui-btn-block box-button mdui-color-blue-200 mdui-btn-icon mdui-ripple"
+                        style="border-radius: 30px;"
+                        disabled
+                        >
+                        即将到来
+                        </button>
+                    </div>
+                    <i class="mdui-icon material-icons"
+
+                    style="font-size: 60px;
+                    margin-top: 30px;
+                    "
+                    >&#xe5cf;</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page-warp-1">
+    </div>
+
+    <div class="page-warp-2">
+        <div class="mdui-container">
+        <div>
+            <div style="height: 10px;"></div>
+            <h1 class="text-ltjm">聊天界面</h1>
+        </div>
+            <div class="mdui-container-fluid" id="main-area" style="height: 656px;">
+
+                <div class="mdui-row mb10 h100 main-area mdui-center">
+                  <div class="mdui-col-xs-3 mb10 h100 opacity">
+                    <ul class="mdui-list mb10 h100 list  left-gugu" style="background-color: #E8EAF6;overflow-y: auto;" id="chattinglist">
+                      <li class="mdui-list-item mdui-ripple mdui-list-item-active">
+                        <i class="mdui-list-item-avatar mdui-icon material-icons">group</i>
+                        <div class="mdui-list-item-content">
+                          <div class="mdui-list-item-title" id="ndxzzy-list">一个没有名字的群</div>
+                          <div class="mdui-list-item-text mdui-list-item-one-line">
+                                <div class="info-message-1">
+                                    <span class="">ndxzzy:你好</span>
+                                </div>
+                                <div class="info-message-2">
+                                    <span class="">hsn:你好</span>
+                                </div>
+                                <div class="info-message-3">
+                                    <span class="">咕谷酱:你好</span>
+                                </div>
+                        </div>
+                      </li>
+                      <li class="mdui-list-item mdui-ripple" id="系统通知-inlist">
+                        <i class="mdui-list-item-avatar mdui-icon material-icons">notifications</i>
+                        <div class="mdui-list-item-content">
+                          <div class="mdui-list-item-title" id="系统通知-list">系统通知</div>
+                          <div class="mdui-list-item-text mdui-list-item-one-line">
+                            <span id="系统通知_chatting" class="">ndxzzy 通过了您的好友请求</span></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="mdui-col-xs-9 r-gugu">
+                    <div class="commentdata2" id="commentdata2">
+                      <div class="comments mdui-card" style="background-color:#E8EAF6;border-radius: 20px;
+                     box-shadow: none;
+                      ">
+                        <div class="CardTitle">
+                          <div id="chatting-title">一个没有名字的群
+                            <span class="mdui-float-right" id="ndxzzy-status"></span></div>
+                        </div>
+                        <div class="CardBody commentdata" id="contentarea" style="height: 556px;">
+                          <div class="msgcontent" id="content">
+
+                        <div class="message-1">
+                            <div class="username">ndxzzy</div>
+                            <div class="bubble">
+                              <span>你好</span>
+                            </div>
+                        </div>
+
+                        <div class="message-2">
+                            <div class="username">hsn</div>
+                            <div class="bubble">
+                              <span>你好</span>
+                            </div>
+                        </div>
+
+                        <div class="message-3">
+                            <div class="username">咕谷酱</div>
+                            <div class="bubble">
+                              <span>你好</span>
+                            </div>
+                        </div>
+
+                          </div>
+                        </div>
+                        <div>
+                          <input type="text" class="inputcontent" max="128" placeholder="输入后回车发送" onkeydown="keyup_submit(event);" id="inputmessage"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <div class="page-warp-3">
+        <div>
+            <div style="height: 10px;"></div>
+            <h1 class="text-kfry">开发人员</h1>
+            <div style="height: 10px;"></div>
+        </div>
+        <div class="mdui-container">
+            <div class="mdui-row gugu-card-left">
+                
+                <div class="mdui-col-md-4 mdui-col-sm-4 card-1" style="margin-top: 20px;">
+                    <div class="mdui-card " style="width: 80%;border-radius: 10px;box-shadow: none;">
+                        <div class="mdui-card-media">
+                            <img src="./img/hsn.png" >
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">hsn</div>
+                                    <div class="mdui-card-primary-subtitle">后端开发</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <button class="mdui-btn mdui-ripple" onclick="window.open('https://www.zh314.xyz')">个人主页</button>
+                            <button class="mdui-btn mdui-ripple" onclick="window.open('https://github.com/hsn8086')">GitHub</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mdui-col-md-4 mdui-col-sm-4"  style="margin-top: 20px;">
+                    <div class="mdui-card card-2" style="width: 80%;border-radius: 10px;box-shadow: none;">
+                        <div class="mdui-card-media">
+                            <img src="./img/ndxzzy.png" >
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">ndxzzy</div>
+                                    <div class="mdui-card-primary-subtitle">前端开发</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <button class="mdui-btn mdui-ripple" onclick="window.open('https://ndxzzy.top/')">个人主页</button>
+                            <button class="mdui-btn mdui-ripple" onclick="window.open('https://github.com/ndxzzy')">GitHub</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mdui-col-md-4 mdui-col-sm-4" style="margin-top: 20px;">
+                    <div class="mdui-card card-3" style="width: 80%;border-radius: 10px;box-shadow: none;">
+                        <div class="mdui-card-media">
+                            <img src="https://ggj.moe/img/gu.jpg" >
+                            <div class="mdui-card-media-covered">
+                                <div class="mdui-card-primary">
+                                    <div class="mdui-card-primary-title">咕谷酱</div>
+                                    <div class="mdui-card-primary-subtitle">官网开发</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdui-card-actions">
+                            <button class="mdui-btn mdui-ripple" onclick="window.open('https://ggj.moe/')">个人主页</button>
+                            <button class="mdui-btn mdui-ripple" onclick="window.open('https://github.com/googujiang')">GitHub</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="page-warp-4">
+        <div>
+            <div style="height: 80px;"></div>
+            <h1 class="text-ymsg">页面正在施工中...</h1>
+            <div style="height: 10px;"></div>
+        </div>
+    </div>
+    <script src="./main.min.js"></script>
+	<script src="https://cdn.staticfile.org/mdui/1.0.2/js/mdui.min.js"></script>
+
+      
+</body>
+</html>
