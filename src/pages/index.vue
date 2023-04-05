@@ -126,16 +126,18 @@ onMounted(async () => {
   dividerTl.from(title1.value!, {
     opacity: 0,
   }).from(chatWindowSide.value!, {
-    x: -400,
+    x: -200,
+    opacity: 0,
   }, '<').from(chatWindow.value!, {
-    y: 400,
+    y: 200,
+    opacity: 0,
   }, '<')
 
   developerTl
     .from(title2.value!, {
       opacity: 0,
     }).from('.developerCard', {
-      y: 500,
+      y: 300,
       opacity: 0,
       stagger: 0.2,
     }, '<')
@@ -172,9 +174,9 @@ function applyForTest() {
 </script>
 
 <template>
-  <div bg="white">
+  <div bg="back">
     <div z-50 fixed top-0 inset-0 p="x5" bg-primary h-15 shadow="xl" flex items-center justify-between>
-      <div flex items-center gap-10>
+      <div flex items-center gap-3>
         <IconButton icon="i-carbon-menu" />
         <h1 font-bold text="xl">
           首页
@@ -184,7 +186,7 @@ function applyForTest() {
     </div>
     <div ref="welcome" fixed flex flex-col w-full items-center top="40">
       <img ref="trigger" src="/logo.png" w-35>
-      <div flex text="23" font-bold>
+      <div flex text="22" font-bold>
         <p ref="logoH" text="logo">
           H
         </p>
@@ -192,10 +194,10 @@ function applyForTest() {
           CAT
         </p>
       </div>
-      <p font-bold text="md:3xl 2xl" my-10>
+      <p font-bold text="md:3xl 2xl" m="y5 x5">
         致力于成为真正小而美的在线网页聊天程序
       </p>
-      <div flex gap-10 text-2xl font-bold>
+      <div flex gap-10 text-xl font-bold>
         <button bg-primary p="x8 y3" rounded-full @click="applyForTest">
           申请测试
         </button>
@@ -205,16 +207,16 @@ function applyForTest() {
       </div>
     </div>
     <img md:flex hidden src="/98483067_p0.jpg">
-    <img md:hidden flex src="/98483067_p0-phone.jpg">
+    <img h-screen w-full object-cover md:hidden flex src="/98483067_p0-phone.jpg">
     <div ref="divider" bg="divider" h-10 />
     <p ref="title1" font-bold text-3xl m="y8">
       聊天界面
     </p>
     <div grid grid-cols-12 h-150 gap-5 mx-auto px="10">
-      <div ref="chatWindowSide" of-hidden hidden col-span-0 md:col-span-3 md:flex flex-col bg="chatBox" rounded="xl">
+      <div ref="chatWindowSide" border="~" shadow="lg" of-hidden hidden col-span-0 md:col-span-3 md:flex flex-col bg="chatBox" rounded="xl">
         <ChatItem v-for="item, index in chatList" :key="item.name" :avatar="item.avatar" :name="item.name" :message="item.message" :selected="index === 0" />
       </div>
-      <div ref="chatWindow" rounded="xl" col-span-12 md:col-span-9 bg="chatBox" flex flex-col justify-between p-5>
+      <div ref="chatWindow" border="~" shadow="lg" rounded="xl" col-span-12 md:col-span-9 bg="chatBox" flex flex-col justify-between p-5>
         <div gap-10 items-start flex flex-col>
           <p font-bold text-xl>
             一个没有名字的群组
@@ -233,10 +235,11 @@ function applyForTest() {
         开发人员
       </p>
     </div>
-    <div grid="~ md:cols-3 cols-1" mx-30 gap-15>
+    <div grid="~ md:cols-3 cols-1" md:mx-30 mx-10 gap-10>
       <DeveloperCard
         v-for="item in developerList"
-        :key="item.name" class="developerCard"
+        :key="item.name"
+        class="developerCard"
         :avatar="item.avatar" :name="item.name" :duty="item.duty"
         :personal-website="item.personalWebsite" :github="item.github"
       />
