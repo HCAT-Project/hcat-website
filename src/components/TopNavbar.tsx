@@ -11,7 +11,7 @@ function HcatNavbar() {
             h1
             size={20}
             css={{
-              textGradient: "45deg, #3F51B5 30%, $blue800 90%",
+              textGradient: "45deg, #3F51B5 30%, $blue800 100%",
             }}
             weight="bold"
           >
@@ -29,7 +29,7 @@ function HcatNavbar() {
             登录
           </Navbar.Link>
           <Navbar.Item>
-            <Button auto flat as={Link} href="#">
+            <Button disabled auto flat as={Link} href="#">
               注册
             </Button>
           </Navbar.Item>
@@ -37,4 +37,4 @@ function HcatNavbar() {
      </Navbar>
     );
 }
-export default App;
+export default HcatNavbar;
